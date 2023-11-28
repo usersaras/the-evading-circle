@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Away!</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>Click Away!</h1>
+
+    Current Level: <span id="current-level">1</span><br />
+    Next Level: <span id="next-level-xp">100</span><br />
+    XP: <span id="current-xp">0</span>
+
+    <div id="level-progress-container">
+      <div id="level-progress"></div>
+    </div>
+
+    <button id="add-xp">Add XP</button>
+
+    <br />
+
+    <img
+      src="https://media.giphy.com/media/2xO491sY6f0cM/source.gif"
+      id="huzzah"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pubsub-js/1.9.4/pubsub.js"></script>
+    <script src="js/GameData.js"></script>
+    <script src="js/GameUi.js"></script>
+  </body>
+</html>
