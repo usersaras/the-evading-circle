@@ -9,6 +9,15 @@ body {
 	text-align: center;
 }
 
+#add-xp{
+	position: absolute;
+
+	scroll-behavior: smooth;
+	transition: 8s;
+	border-radius: 100%;
+	z-index: 99;
+}
+
 #level-progress-container {
 	border: 3px solid green;
 	width: 200px;

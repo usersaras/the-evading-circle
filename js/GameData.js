@@ -4,9 +4,9 @@ class GameData {
     this.level = 1;
     this.next_level_xp = 20;
 
-    setInterval(() => {
-      this.autoIncrementXp();
-    }, 1000);
+    // setInterval(() => {
+    //   this.autoIncrementXp();
+    // }, 1000);
 
     PubSub.subscribe("user_click_xp", () => {
       this.autoIncrementXp();
@@ -30,7 +30,8 @@ class GameData {
   maybeLevelUp(xp) {
     if (xp >= this.next_level_xp) {
       this.level += 1;
-      this.next_level_xp = this.next_level_xp * 2 * this.level;
+      // this.next_level_xp = this.next_level_xp * 2 * this.level;
+      this.next_level_xp = this.level * 100;
 
       PubSub.publish("level_up", {
         level: this.level,
