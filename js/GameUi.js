@@ -10,13 +10,14 @@ class GameUI {
     this.huzzah = document.getElementById("huzzah");
 
     this.initialButtonWidth = 100;
+    this.huzzah.style.display = "none";
 
     this.button.addEventListener("click", () => {
       PubSub.publish("user_click_xp");
     });
 
     this.instantiateButton();
-    this.buttonGoesCrazy();
+    this.makeButtonGoCrazy();
 
     PubSub.subscribe("xp_changed", (tag, data) => {
       this.updateProgressBar(data.xp, data.next_level_xp);
@@ -34,6 +35,15 @@ class GameUI {
   instantiateButton() {
     this.button.style.height = this.initialButtonWidth + "px";
     this.button.style.width = this.initialButtonWidth + "px";
+  }
+
+  makeButtonGoCrazy() {
+    setInterval(() => {
+      this.button.style.top = generateRandomCoordinates();
+      this.button.style.bottom = generateRandomCoordinates();
+      this.button.style.left = generateRandomCoordinates();
+      this.button.style.right = generateRandomCoordinates();
+    }, 300);
   }
 
   increaseButtonSpeed(level) {
@@ -62,19 +72,10 @@ class GameUI {
     this.nextLevelXp.innerHTML = xp;
   }
 
-  buttonGoesCrazy() {
-    setInterval(() => {
-      this.button.style.top = generateRandomCoordinates();
-      this.button.style.bottom = generateRandomCoordinates();
-      this.button.style.left = generateRandomCoordinates();
-      this.button.style.right = generateRandomCoordinates();
-    }, 300);
-  }
-
   showHuzzaz() {
-    this.huzzah.style.opacity = 1;
+    this.huzzah.style.display = "block";
     setTimeout(() => {
-      this.huzzah.style.opacity = 0;
+      this.huzzah.style.display = "none";
     }, 2000);
   }
 }

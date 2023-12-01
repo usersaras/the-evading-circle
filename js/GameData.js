@@ -30,7 +30,7 @@ class GameData {
   maybeLevelUp(xp) {
     if (xp >= this.next_level_xp) {
       this.level += 1;
-      // this.next_level_xp = this.next_level_xp * 2 * this.level;
+      this.next_level_xp = this.next_level_xp * 2 * this.level;
       this.next_level_xp = this.level * 100;
 
       PubSub.publish("level_up", {

@@ -32,8 +32,13 @@ body {
 	transition: width .1s ease-in-out;
 }
 
+.huzzah-container{
+	display: flex;
+	justify-content: center;
+}
+
 #huzzah {
 	margin-top: 40px;
-	opacity: 0;
+	/* opacity: 0; */
 	transition: opacity .5s ease-in-out;
 }
